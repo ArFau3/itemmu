@@ -169,7 +169,7 @@ Widget build(BuildContext context) {
                     TextSpan(
                       text: 'Kebijakan Aplikasi',
                       style: const TextStyle(
-                        color: Colors.blue, 
+                        color: Color.fromARGB(255, 218, 115, 9), 
                         fontSize: 14, fontWeight: 
                         FontWeight.bold, decoration: 
                         TextDecoration.underline
@@ -205,7 +205,7 @@ Widget build(BuildContext context) {
                     TextSpan(
                       text: 'login',
                       style: const TextStyle(
-                        color: Colors.blue, 
+                        color: Color.fromARGB(255, 218, 115, 9), 
                         fontSize: 14,
                         fontWeight: FontWeight.bold,
                       ),
