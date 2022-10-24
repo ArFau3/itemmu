@@ -70,19 +70,19 @@ Widget build(BuildContext context) {
                   ),
 
                   child: TextButton(
-                    style: TextButton.styleFrom(
-                      foregroundColor: Colors.black,
-                      padding: const EdgeInsets.symmetric(horizontal: 125),
-                      textStyle: const TextStyle(
-                        fontSize: 15, 
-                        fontWeight: FontWeight.bold,
+                      style: TextButton.styleFrom(
+                        foregroundColor: Colors.black,
+                        padding: const EdgeInsets.symmetric(horizontal: 125),
+                        textStyle: const TextStyle(
+                          fontSize: 15, 
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
-                    ),
-                    onPressed: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (_) => const RegisterScreen()));
-                    },
-                    child: const Text('Buat Akun'), 
-                  ),                      
+                      onPressed: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (_) => const RegisterScreen()));
+                      },
+                      child: const Text('Buat Akun'), 
+                    ),                   
               ),
               //END Tombol Buat akun 
               //Kata Atau
@@ -149,74 +149,78 @@ Widget build(BuildContext context) {
           ),
         ),
         //Kalimat Persetujuan  
-        Container(
-          padding: const EdgeInsets.only(top: 45),
-          margin: const EdgeInsets.only(left: 57, right: 57),
-          child: Column(
-            children: [
-              RichText(
-                textAlign: TextAlign.center,
-                text: TextSpan(
-                  children: [
-                    const TextSpan(
-                      text: "Dengan melakukan pendaftaran berarti anda menyetujui segala ",
-                      style: TextStyle(
-                        color: Colors.white, 
-                        fontSize: 14,
-                        fontWeight: FontWeight.bold,
+        Center(
+          child: Container(
+            padding: const EdgeInsets.only(top: 45),
+            // margin: const EdgeInsets.only(left: 57, right: 57),
+            child: Column(
+              children: [
+                RichText(
+                  textAlign: TextAlign.center,
+                  text: TextSpan(
+                    children: [
+                      const TextSpan(
+                        text: "Dengan melakukan pendaftaran berarti anda menyetujui segala ",
+                        style: TextStyle(
+                          color: Colors.white, 
+                          fontSize: 14,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
-                    ),
-                    TextSpan(
-                      text: 'Kebijakan Aplikasi',
-                      style: const TextStyle(
-                        color: Color.fromARGB(255, 218, 115, 9), 
-                        fontSize: 14, fontWeight: 
-                        FontWeight.bold, decoration: 
-                        TextDecoration.underline
+                      TextSpan(
+                        text: 'Kebijakan Aplikasi',
+                        style: const TextStyle(
+                          color: Color.fromARGB(255, 218, 115, 9), 
+                          fontSize: 14, fontWeight: 
+                          FontWeight.bold, decoration: 
+                          TextDecoration.underline
+                        ),
+                        recognizer: TapGestureRecognizer()
+                          ..onTap = () { Navigator.push(context, MaterialPageRoute(builder: (_) => const LoginScreen()));
+                        },
                       ),
-                      recognizer: TapGestureRecognizer()
-                        ..onTap = () { Navigator.push(context, MaterialPageRoute(builder: (_) => const LoginScreen()));
-                      },
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
         //END Kalimat Persetujuan
         //Opsi Login
-        Container(
-          padding: const EdgeInsets.only(top: 60),
-          margin: const EdgeInsets.only(left: 95, bottom: 20),
-          child: Row(
-            children: [
-              RichText(
-                text: TextSpan(
-                  children: [
-                    const TextSpan(
-                      text: 'Sudah mempunyai akun? ',
-                      style: TextStyle(
-                        color: Colors.white, 
-                        fontSize: 14,
-                        fontWeight: FontWeight.bold,
+        Center(
+          child: Container(
+            padding: const EdgeInsets.only(top: 60),
+            margin: const EdgeInsets.only(left: 95, bottom: 20),
+            child: Row(
+              children: [
+                RichText(
+                  text: TextSpan(
+                    children: [
+                      const TextSpan(
+                        text: 'Sudah mempunyai akun? ',
+                        style: TextStyle(
+                          color: Colors.white, 
+                          fontSize: 14,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
-                    ),
-                    TextSpan(
-                      text: 'login',
-                      style: const TextStyle(
-                        color: Color.fromARGB(255, 218, 115, 9), 
-                        fontSize: 14,
-                        fontWeight: FontWeight.bold,
+                      TextSpan(
+                        text: 'login',
+                        style: const TextStyle(
+                          color: Color.fromARGB(255, 218, 115, 9), 
+                          fontSize: 14,
+                          fontWeight: FontWeight.bold,
+                        ),
+                        recognizer: TapGestureRecognizer()
+                          ..onTap = () { Navigator.push(context, MaterialPageRoute(builder: (_) => const LoginScreen()));
+                        },
                       ),
-                      recognizer: TapGestureRecognizer()
-                        ..onTap = () { Navigator.push(context, MaterialPageRoute(builder: (_) => const LoginScreen()));
-                      },
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
         //END Opsi Login
