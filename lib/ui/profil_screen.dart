@@ -6,95 +6,115 @@ import 'package:itemmu/ui/beranda.dart';
 class ProfilScreen extends StatelessWidget{
   const ProfilScreen({super.key});
 
-
   @override
   Widget build(BuildContext context) {
+    var media = MediaQuery.of(context).size;
+
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 62, 62, 62),
-      body: Stack(
-        children: [
-          //Top Section
+      body: ListView(
+        children:[
+          Stack(
+            children: [
           Container(
-            width: 400,
-            height: 350,
-            decoration: BoxDecoration(
-              color: const Color.fromARGB(212, 255, 131, 3),
-              shape: BoxShape.rectangle,
-              borderRadius: BorderRadius.circular(35),
+            //Top Section
+              width: media.width,
+              height: media.height * 0.65,
+              decoration: const BoxDecoration(
+                color: Color.fromARGB(255, 62, 62, 62),
+              ),
+              //END Top Section  
             ),
-            //END Top Section
-            child: Column(
-              children: [
-                //Foto Profil
-                Container(
-                  padding: const EdgeInsets.only(top: 95),
+            AspectRatio(
+              aspectRatio: media.width / media.height * 2,
+              child: Container(
+                  //width: media.width,
+                  //height: 130,
                   decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(140),
-                  ),
-                  child: CircleAvatar(
-                    radius: 55,
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(360),
-                      child: SizedBox.expand(
-                        child:Image.asset(
-                          "assets/images/foto.jpg",
-                          fit: BoxFit.fill,
-                        )
+                  color: const Color.fromARGB(212, 255, 131, 3),
+                  shape: BoxShape.rectangle,
+                  borderRadius: BorderRadius.circular(35),
+                ),
+                  child: Column(
+                    children: [
+                      //Foto Profil
+                      Container(
+                        padding: const EdgeInsets.only(top: 95),
+                        decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(140),
+                        ),
+                        child: CircleAvatar(
+                          radius: 55,
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(360),
+                            child: SizedBox.expand(
+                              child:Image.asset(
+                                "assets/images/foto.jpg",
+                                fit: BoxFit.fill,
+                              )
+                            ),
+                          ),
+                        ),
                       ),
-                    ),
+                      //END Foto Profil
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      const Text(
+                        "Arfau",
+                        style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                      ),
+                    ],
                   ),
                 ),
-                //END Foto Profil
-                const SizedBox(
-                  height: 10,
-                ),
-                const Text(
-                  "Arfau",
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                ),
-              ],
-            ),  
-          ),
+            ),
           //Menu Info Akun
           Positioned(
-            top: 280,
+            top: media.height*0.42,
             child: Container(
-              margin: const EdgeInsets.symmetric(horizontal: 25),
-              width: 345,
+              alignment: Alignment.topCenter,
+              margin: EdgeInsets.symmetric(horizontal: media.width*0.04),
               height: 130,
+              width: media.width*0.94,
               decoration: BoxDecoration(
                 color: const Color.fromARGB(255, 36, 36, 36),
                 shape: BoxShape.rectangle,
                 borderRadius: BorderRadius.circular(25),
               ),
-              //Pilihan Menu Info Akun
+                //Pilihan Menu Info Akun
               child: ButtonBar(
-                mainAxisSize: MainAxisSize.min,
                 alignment: MainAxisAlignment.spaceEvenly,
-                buttonMinWidth: 10,
+                buttonMinWidth: 8,
                 children: [
                   //Container = menu
                   //expanded = pembatas
-                  Container(
-                    margin: const EdgeInsets.symmetric(vertical: 25),
-                    child: Column(
-                      children: [
-                        ElevatedButton.icon(
-                          icon: const Icon(Icons.account_balance_wallet_outlined),
-                          onPressed: () {},
-                          style: ElevatedButton.styleFrom(
-                            elevation: 0.0, 
-                            backgroundColor: Colors.red.withOpacity(0),
+                  GestureDetector(
+                      onTap: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(builder: (context) {
+                            return const ProfilScreen();
+                          }),
+                        );
+                      },
+                      child: Container(
+                      margin: const EdgeInsets.symmetric(vertical: 30),
+                      child: Column(
+                        children: const [
+                          IconTheme(
+                            data: IconThemeData(
+                              color: Colors.white,
+                              size: 35,
+                            ), 
+                            child: Icon(Icons.account_balance_wallet_outlined),
                           ),
-                          label: const Text(" "),
-                        ),
-                            const Text(
+                          Text(
                             "Dompet Digital",
                             style: TextStyle(
                               color: Colors.white,
                             ),
                           ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
                   Expanded(
@@ -105,61 +125,74 @@ class ProfilScreen extends StatelessWidget{
                           thickness: 1,
                         )),
                   ),
-                  Container(
-                    margin: const EdgeInsets.symmetric(vertical: 25),
-                    child: Column(
-                      children: [
-                        ElevatedButton.icon(
-                          icon: const Icon(Icons.shopping_cart_outlined),
-                          onPressed: () {},
-                          style: ElevatedButton.styleFrom(
-                            elevation: 0.0, 
-                            backgroundColor: Colors.red.withOpacity(0),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) {
+                          return const ProfilScreen();
+                        }),
+                      );
+                    },
+                    child: Container(
+                      margin: const EdgeInsets.symmetric(vertical: 30),
+                      child: Column(
+                        children: const [
+                          IconTheme(
+                            data: IconThemeData(
+                              color: Colors.white,
+                              size: 35,
+                            ), 
+                            child: Icon(Icons.shopping_cart_outlined),
                           ),
-                          label: const Text(" "),
-                        ),
-                            const Text(
+                          Text(
                             "Keranjang",
                             style: TextStyle(
                               color: Colors.white,
                             ),
                           ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
                   Expanded(
                     child: Container(
-                        margin: const EdgeInsets.symmetric(vertical: 20),
-                        child: const VerticalDivider(
-                          color: Color.fromARGB(255, 121, 121, 121),
-                          thickness: 1,
-                        )),
+                      margin: const EdgeInsets.symmetric(vertical: 20),
+                      child: const VerticalDivider(
+                        color: Color.fromARGB(255, 121, 121, 121),
+                        thickness: 1,
+                      )
+                    ),
                   ),
-                  Container(
-                    margin: const EdgeInsets.symmetric(vertical: 25),
-                    child: Column(
-                      children: [
-                        ElevatedButton.icon(
-                          icon: const Image(
-                            image: AssetImage("assets/images/promo.png"),
-                            color: Colors.white,
-                            width: 30,
-                            height: 30,
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) {
+                          return const ProfilScreen();
+                        }),
+                      );
+                    },
+                    child: Container(
+                      margin: const EdgeInsets.symmetric(vertical: 30, horizontal: 10),
+                      child: Column(
+                        children: const [
+                          IconTheme(
+                            data: IconThemeData(
+                            ), 
+                            child: Image(
+                              image: AssetImage("assets/images/promo.png"),
+                              color: Colors.white,
+                              width: 35,
+                              height: 35,
+                            ),
                           ),
-                          onPressed: () {},
-                          style: ElevatedButton.styleFrom(
-                            elevation: 0.0, 
-                            backgroundColor: Colors.red.withOpacity(0),
-                          ),
-                          label: const Text(" "),
-                        ),
-                            const Text(
+                          Text(
                             "Kupon",
                             style: TextStyle(
                               color: Colors.white,
                             ),
                           ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
                 ],
@@ -168,39 +201,36 @@ class ProfilScreen extends StatelessWidget{
             ),
           ),
           //END Menu Info Akun
+            ]
+          ),                 
           //Mid Section
-          Container(
-              margin: const EdgeInsets.only(top: 120, left: 15),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
-                  Text(
-                    "Riwayat Pembelian",
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                    ),
-                  ),
-                ],
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: const [
+              Text(
+                "Riwayat Pembelian",
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                ),
               ),
+            ],
           ),
           //Menu History
-          Container(
-            margin: const EdgeInsets.only(top: 280, left: 5),
+          Expanded(
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 //Pilihan Menu History
                 ButtonBar(
-                  alignment: MainAxisAlignment.spaceAround,
+                  alignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     Column(
                       children: [
                         ElevatedButton.icon(
                           icon: const Icon(
                             Icons.access_time,
-                            size: 60,
+                            size: 40,
                           ),
                           onPressed: () {},
                           style: ElevatedButton.styleFrom(
@@ -226,8 +256,8 @@ class ProfilScreen extends StatelessWidget{
                             icon: const Image(
                               image: AssetImage("assets/images/circle.png"),
                               color: Colors.white,
-                              width: 50,
-                              height: 50,
+                              width: 35,
+                              height: 35,
                               
                             ),
                             onPressed: () {},
@@ -238,7 +268,7 @@ class ProfilScreen extends StatelessWidget{
                             label: const Text(" "),
                           ),
                           Container(
-                            margin: const EdgeInsets.only(top: 10),
+                            margin: const EdgeInsets.only(top: 1),
                             child: const Text(
                               "Sedang Diproses",
                               style: TextStyle(
@@ -257,7 +287,7 @@ class ProfilScreen extends StatelessWidget{
                           ElevatedButton.icon(
                           icon: const Icon(
                             Icons.check_circle_outline,
-                            size: 60,
+                            size: 40,
                           ),
                           onPressed: () {},
                           style: ElevatedButton.styleFrom(
@@ -293,8 +323,13 @@ class ProfilScreen extends StatelessWidget{
             ),
           ),
           //END Menu History
+          //Tambahan
+          const SizedBox(
+            height: 330,
+          )
+          //END Tambahan
           //END Mid Section
-        ],
+        ]
       ),
       //Footer
       bottomNavigationBar: Container(
