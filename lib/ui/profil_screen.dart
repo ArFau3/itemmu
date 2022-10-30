@@ -3,7 +3,7 @@ import 'package:itemmu/ui/bantuan.dart';
 import 'package:itemmu/ui/awal.dart';
 import 'package:itemmu/ui/beranda.dart';
 
-class ProfilScreen extends StatelessWidget{
+class ProfilScreen extends StatelessWidget {
   const ProfilScreen({super.key});
 
   @override
@@ -31,6 +31,7 @@ class ProfilScreen extends StatelessWidget{
                   //width: media.width,
                   //height: 130,
                   decoration: BoxDecoration(
+<<<<<<< HEAD
                   color: const Color.fromARGB(212, 255, 131, 3),
                   shape: BoxShape.rectangle,
                   borderRadius: BorderRadius.circular(35),
@@ -68,6 +69,33 @@ class ProfilScreen extends StatelessWidget{
                   ),
                 ),
             ),
+=======
+                    borderRadius: BorderRadius.circular(140),
+                  ),
+                  child: CircleAvatar(
+                    radius: 55,
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(360),
+                      child: SizedBox.expand(
+                          child: Image.asset(
+                        "assets/images/foto.jpg",
+                        fit: BoxFit.fill,
+                      )),
+                    ),
+                  ),
+                ),
+                //END Foto Profil
+                const SizedBox(
+                  height: 10,
+                ),
+                const Text(
+                  "Arfau",
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                ),
+              ],
+            ),
+          ),
+>>>>>>> 14a80c39265bf16d204aa639d82ae9b0efdbee8f
           //Menu Info Akun
           Positioned(
             top: media.height*0.42,
@@ -88,6 +116,7 @@ class ProfilScreen extends StatelessWidget{
                 children: [
                   //Container = menu
                   //expanded = pembatas
+<<<<<<< HEAD
                   GestureDetector(
                       onTap: () {
                         Navigator.of(context).push(
@@ -115,6 +144,29 @@ class ProfilScreen extends StatelessWidget{
                           ),
                         ],
                       ),
+=======
+                  Container(
+                    margin: const EdgeInsets.symmetric(vertical: 25),
+                    child: Column(
+                      children: [
+                        ElevatedButton.icon(
+                          icon:
+                              const Icon(Icons.account_balance_wallet_outlined),
+                          onPressed: () {},
+                          style: ElevatedButton.styleFrom(
+                            elevation: 0.0,
+                            backgroundColor: Colors.red.withOpacity(0),
+                          ),
+                          label: const Text(" "),
+                        ),
+                        const Text(
+                          "Dompet Digital",
+                          style: TextStyle(
+                            color: Colors.white,
+                          ),
+                        ),
+                      ],
+>>>>>>> 14a80c39265bf16d204aa639d82ae9b0efdbee8f
                     ),
                   ),
                   Expanded(
@@ -125,6 +177,7 @@ class ProfilScreen extends StatelessWidget{
                           thickness: 1,
                         )),
                   ),
+<<<<<<< HEAD
                   GestureDetector(
                     onTap: () {
                       Navigator.of(context).push(
@@ -152,6 +205,28 @@ class ProfilScreen extends StatelessWidget{
                           ),
                         ],
                       ),
+=======
+                  Container(
+                    margin: const EdgeInsets.symmetric(vertical: 25),
+                    child: Column(
+                      children: [
+                        ElevatedButton.icon(
+                          icon: const Icon(Icons.shopping_cart_outlined),
+                          onPressed: () {},
+                          style: ElevatedButton.styleFrom(
+                            elevation: 0.0,
+                            backgroundColor: Colors.red.withOpacity(0),
+                          ),
+                          label: const Text(" "),
+                        ),
+                        const Text(
+                          "Keranjang",
+                          style: TextStyle(
+                            color: Colors.white,
+                          ),
+                        ),
+                      ],
+>>>>>>> 14a80c39265bf16d204aa639d82ae9b0efdbee8f
                     ),
                   ),
                   Expanded(
@@ -185,6 +260,7 @@ class ProfilScreen extends StatelessWidget{
                               height: 35,
                             ),
                           ),
+<<<<<<< HEAD
                           Text(
                             "Kupon",
                             style: TextStyle(
@@ -193,6 +269,22 @@ class ProfilScreen extends StatelessWidget{
                           ),
                         ],
                       ),
+=======
+                          onPressed: () {},
+                          style: ElevatedButton.styleFrom(
+                            elevation: 0.0,
+                            backgroundColor: Colors.red.withOpacity(0),
+                          ),
+                          label: const Text(" "),
+                        ),
+                        const Text(
+                          "Kupon",
+                          style: TextStyle(
+                            color: Colors.white,
+                          ),
+                        ),
+                      ],
+>>>>>>> 14a80c39265bf16d204aa639d82ae9b0efdbee8f
                     ),
                   ),
                 ],
@@ -204,6 +296,7 @@ class ProfilScreen extends StatelessWidget{
             ]
           ),                 
           //Mid Section
+<<<<<<< HEAD
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: const [
@@ -216,6 +309,23 @@ class ProfilScreen extends StatelessWidget{
                 ),
               ),
             ],
+=======
+          Container(
+            margin: const EdgeInsets.only(top: 120, left: 15),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: const [
+                Text(
+                  "Riwayat Pembelian",
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
+                ),
+              ],
+            ),
+>>>>>>> 14a80c39265bf16d204aa639d82ae9b0efdbee8f
           ),
           //Menu History
           Expanded(
@@ -234,7 +344,7 @@ class ProfilScreen extends StatelessWidget{
                           ),
                           onPressed: () {},
                           style: ElevatedButton.styleFrom(
-                            elevation: 0.0, 
+                            elevation: 0.0,
                             backgroundColor: Colors.red.withOpacity(0),
                           ),
                           label: const Text(" "),
@@ -256,13 +366,18 @@ class ProfilScreen extends StatelessWidget{
                             icon: const Image(
                               image: AssetImage("assets/images/circle.png"),
                               color: Colors.white,
+<<<<<<< HEAD
                               width: 35,
                               height: 35,
                               
+=======
+                              width: 50,
+                              height: 50,
+>>>>>>> 14a80c39265bf16d204aa639d82ae9b0efdbee8f
                             ),
                             onPressed: () {},
                             style: ElevatedButton.styleFrom(
-                              elevation: 0.0, 
+                              elevation: 0.0,
                               backgroundColor: Colors.red.withOpacity(0),
                             ),
                             label: const Text(" "),
@@ -271,10 +386,8 @@ class ProfilScreen extends StatelessWidget{
                             margin: const EdgeInsets.only(top: 1),
                             child: const Text(
                               "Sedang Diproses",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 15
-                              ),
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 15),
                             ),
                           ),
                         ],
@@ -285,6 +398,7 @@ class ProfilScreen extends StatelessWidget{
                       child: Column(
                         children: [
                           ElevatedButton.icon(
+<<<<<<< HEAD
                           icon: const Icon(
                             Icons.check_circle_outline,
                             size: 40,
@@ -295,16 +409,28 @@ class ProfilScreen extends StatelessWidget{
                             backgroundColor: Colors.red.withOpacity(0),
                           ),
                           label: const Text(" "),
+=======
+                            icon: const Icon(
+                              Icons.check_circle_outline,
+                              size: 60,
+                            ),
+                            onPressed: () {},
+                            style: ElevatedButton.styleFrom(
+                              elevation: 0.0,
+                              backgroundColor: Colors.red.withOpacity(0),
+                            ),
+                            label: const Text(" "),
+>>>>>>> 14a80c39265bf16d204aa639d82ae9b0efdbee8f
                           ),
                           Container(
                             margin: const EdgeInsets.only(right: 17),
                             child: const Text(
-                            "Selesai",
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 15,
+                              "Selesai",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 15,
+                              ),
                             ),
-                          ),
                           ),
                         ],
                       ),
@@ -313,12 +439,11 @@ class ProfilScreen extends StatelessWidget{
                 ),
                 //END Pilihan Menu History
                 Container(
-                  margin: const EdgeInsets.only(left:20, right: 30),
-                  child: const Divider(
-                    color: Color.fromARGB(255, 121, 121, 121),
-                    thickness: 2,
-                  )
-                ),
+                    margin: const EdgeInsets.only(left: 20, right: 30),
+                    child: const Divider(
+                      color: Color.fromARGB(255, 121, 121, 121),
+                      thickness: 2,
+                    )),
               ],
             ),
           ),
@@ -353,7 +478,9 @@ class ProfilScreen extends StatelessWidget{
                   Image.asset('assets/icon/home.png'),
                   const Text(
                     'Beranda',
-                    style: TextStyle(color: Colors.white,),
+                    style: TextStyle(
+                      color: Colors.white,
+                    ),
                   ),
                 ],
               ),

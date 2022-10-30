@@ -7,29 +7,38 @@ class Bantuan extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double widthDevice = MediaQuery.of(context).size.width;
+    double heightDevice = MediaQuery.of(context).size.height;
+    double paddingTop = MediaQuery.of(context).padding.top;
+    double paddingBottom = MediaQuery.of(context).padding.bottom;
+    double paddingLeft = MediaQuery.of(context).padding.left;
+    double paddingRight = MediaQuery.of(context).padding.right;
+
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 36, 36, 36),
+      backgroundColor: Color.fromARGB(255, 36, 36, 36),
       // AppBar
       appBar: AppBar(
-        title: const Text(
+        title: Text(
           'Bantuan',
           style: TextStyle(fontWeight: FontWeight.w800, fontSize: 25),
         ),
-        backgroundColor: const Color.fromARGB(255, 36, 36, 36),
-        toolbarHeight: 70,
-        shape: const Border(
+        backgroundColor: Color.fromARGB(255, 36, 36, 36),
+        toolbarHeight: heightDevice = 70,
+        shape: Border(
             bottom: BorderSide(
           color: Color.fromARGB(255, 121, 121, 121),
           width: 1,
         )),
       ),
       body: ListView(
-        padding: const EdgeInsets.only(left: 10, top: 25, right: 10),
+        padding: EdgeInsets.only(
+            left: paddingLeft = 10,
+            top: paddingTop = 20,
+            right: paddingRight = 10),
         children: [
           // Pusat Bantuan
-
           Container(
-            padding: const EdgeInsets.all(12),
+            padding: EdgeInsets.all(12),
             child: Row(
               children: [
                 Expanded(
@@ -37,8 +46,8 @@ class Bantuan extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Container(
-                        padding: const EdgeInsets.only(bottom: 10),
-                        child: const Text(
+                        padding: EdgeInsets.only(bottom: paddingBottom = 10),
+                        child: Text(
                           "Pusat Bantuan",
                           style: TextStyle(
                               fontWeight: FontWeight.w500,
@@ -56,28 +65,27 @@ class Bantuan extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 10),
+                  padding: EdgeInsets.symmetric(horizontal: 10),
                   child: Image.asset('assets/icon/panah.png'),
                 ),
               ],
             ),
-            width: 50,
-            height: 100,
+            width: widthDevice = 20,
+            height: heightDevice = 100,
             decoration: BoxDecoration(
-                borderRadius: const BorderRadius.all(Radius.circular(15)),
+                borderRadius: BorderRadius.all(Radius.circular(15)),
                 border: Border.all(
                   width: 1,
-                  color: const Color.fromARGB(255, 121, 121, 121),
+                  color: Color.fromARGB(255, 121, 121, 121),
                 )),
           ),
-          const SizedBox(
-            height: 25,
+          SizedBox(
+            height: heightDevice = 20,
           ),
 
           // Komplain
-
           Container(
-            padding: const EdgeInsets.all(12),
+            padding: EdgeInsets.all(12),
             child: Row(
               children: [
                 Expanded(
@@ -85,8 +93,8 @@ class Bantuan extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Container(
-                        padding: const EdgeInsets.only(bottom: 10),
-                        child: const Text(
+                        padding: EdgeInsets.only(bottom: paddingBottom = 10),
+                        child: Text(
                           "Komplain",
                           style: TextStyle(
                               fontWeight: FontWeight.w500,
@@ -95,7 +103,7 @@ class Bantuan extends StatelessWidget {
                         ),
                       ),
                       Text(
-                        'Cek komplain yang kamu ajukan ke Itemmu disini.',
+                        'Cek komplain yang kamu ajukan ke itemmu disini.',
                         style: TextStyle(
                           color: Colors.grey[500],
                         ),
@@ -104,28 +112,27 @@ class Bantuan extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 10),
+                  padding: EdgeInsets.symmetric(horizontal: 10),
                   child: Image.asset('assets/icon/panah.png'),
                 ),
               ],
             ),
-            width: 50,
-            height: 100,
+            width: widthDevice = 20,
+            height: heightDevice = 100,
             decoration: BoxDecoration(
-                borderRadius: const BorderRadius.all(Radius.circular(15)),
+                borderRadius: BorderRadius.all(Radius.circular(15)),
                 border: Border.all(
                   width: 1,
-                  color: const Color.fromARGB(255, 121, 121, 121),
+                  color: Color.fromARGB(255, 121, 121, 121),
                 )),
           ),
-          const SizedBox(
-            height: 25,
+          SizedBox(
+            height: heightDevice = 20,
           ),
 
           // Hubungi Itemmu
-
           Container(
-            padding: const EdgeInsets.all(12),
+            padding: EdgeInsets.all(12),
             child: Row(
               children: [
                 Expanded(
@@ -133,8 +140,8 @@ class Bantuan extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Container(
-                        padding: const EdgeInsets.only(bottom: 10),
-                        child: const Text(
+                        padding: EdgeInsets.only(bottom: paddingBottom = 10),
+                        child: Text(
                           "Hubungi Itemmu",
                           style: TextStyle(
                               fontWeight: FontWeight.w500,
@@ -152,26 +159,29 @@ class Bantuan extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 10),
+                  padding: EdgeInsets.symmetric(horizontal: 10),
                   child: Image.asset('assets/icon/panah.png'),
                 ),
               ],
             ),
-            width: 50,
-            height: 100,
+            width: widthDevice = 20,
+            height: heightDevice = 100,
             decoration: BoxDecoration(
-                borderRadius: const BorderRadius.all(Radius.circular(15)),
+                borderRadius: BorderRadius.all(Radius.circular(15)),
                 border: Border.all(
                   width: 1,
-                  color: const Color.fromARGB(255, 121, 121, 121),
+                  color: Color.fromARGB(255, 121, 121, 121),
                 )),
+          ),
+          SizedBox(
+            height: heightDevice = 20,
           ),
         ],
       ),
       bottomNavigationBar: Container(
-        decoration: const BoxDecoration(
+        decoration: BoxDecoration(
             border: Border(top: BorderSide(width: 1, color: Colors.grey))),
-        height: 70,
+        height: heightDevice = 70,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
@@ -179,7 +189,7 @@ class Bantuan extends StatelessWidget {
               onTap: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(builder: (context) {
-                    return const Beranda();
+                    return Beranda();
                   }),
                 );
               },
@@ -187,9 +197,11 @@ class Bantuan extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Image.asset('assets/icon/home.png'),
-                  const Text(
+                  Text(
                     'Beranda',
-                    style: TextStyle(color: Colors.white,),
+                    style: TextStyle(
+                      color: Colors.white,
+                    ),
                   ),
                 ],
               ),
@@ -198,7 +210,7 @@ class Bantuan extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Image.asset('assets/icon/search.png'),
-                const Text(
+                Text(
                   'Cari',
                   style: TextStyle(color: Colors.white),
                 ),
@@ -208,7 +220,7 @@ class Bantuan extends StatelessWidget {
               onTap: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(builder: (context) {
-                    return const Bantuan();
+                    return Bantuan();
                   }),
                 );
               },
@@ -216,7 +228,7 @@ class Bantuan extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Image.asset('assets/icon/bantuan_aktif.png'),
-                  const Text(
+                  Text(
                     'Bantuan',
                     style: TextStyle(color: Color.fromARGB(255, 255, 129, 3)),
                   ),
@@ -227,7 +239,7 @@ class Bantuan extends StatelessWidget {
               onTap: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(builder: (context) {
-                    return const AwalScreen();
+                    return AwalScreen();
                   }),
                 );
               },
@@ -235,7 +247,7 @@ class Bantuan extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Image.asset('assets/icon/akun.png'),
-                  const Text(
+                  Text(
                     'Akun',
                     style: TextStyle(color: Colors.white),
                   ),
