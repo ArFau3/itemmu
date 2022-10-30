@@ -7,6 +7,13 @@ class Beranda extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double widthDevice = MediaQuery.of(context).size.width;
+    double heightDevice = MediaQuery.of(context).size.height;
+    double paddingTop = MediaQuery.of(context).padding.top;
+    double paddingBottom = MediaQuery.of(context).padding.bottom;
+    double paddingLeft = MediaQuery.of(context).padding.left;
+    double paddingRight = MediaQuery.of(context).padding.right;
+
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 36, 36, 36),
       // Appbar
@@ -16,18 +23,19 @@ class Beranda extends StatelessWidget {
             borderRadius: BorderRadius.vertical(bottom: Radius.circular(30))),
         bottom: PreferredSize(
             child: Container(
-              padding: const EdgeInsets.only(left: 20, bottom: 100),
+              padding: EdgeInsets.only(
+                  left: paddingLeft = 20, bottom: paddingBottom = 100),
               child: Row(
                 children: [
                   Stack(
                     children: [Image.asset('assets/images/logo.png')],
                   ),
                   Container(
-                    margin: const EdgeInsets.only(left: 15),
+                    margin: EdgeInsets.only(left: paddingLeft = 20),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const Text(
+                        Text(
                           'ITEMMU',
                           style: TextStyle(
                               fontSize: 22,
@@ -40,21 +48,21 @@ class Beranda extends StatelessWidget {
                 ],
               ),
             ),
-            preferredSize: const Size.fromHeight(150)),
+            preferredSize: Size.fromHeight(heightDevice = 150)),
       ),
       // body
       body: ListView(
-        padding: const EdgeInsets.symmetric(horizontal: 15),
+        padding: EdgeInsets.symmetric(horizontal: 20),
         children: [
-          const SizedBox(
-            height: 20,
+          SizedBox(
+            height: heightDevice = 50,
           ),
-          const Text(
+          Text(
             'POPULER',
             style: TextStyle(
                 color: Colors.white, fontSize: 22, fontWeight: FontWeight.bold),
           ),
-          const SizedBox(height: 20),
+          SizedBox(height: heightDevice = 20),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -72,8 +80,8 @@ class Beranda extends StatelessWidget {
               )
             ],
           ),
-          const SizedBox(
-            height: 20,
+          SizedBox(
+            height: heightDevice = 20,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -92,12 +100,38 @@ class Beranda extends StatelessWidget {
               )
             ],
           ),
+          SizedBox(
+            height: heightDevice = 50,
+          ),
+          Text(
+            'NEW TITLES',
+            style: TextStyle(
+                color: Colors.white, fontSize: 22, fontWeight: FontWeight.bold),
+          ),
+          SizedBox(height: heightDevice = 20),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              ItemKategori(
+                title: 'Super Sus',
+                image: 'assets/images/supersus.png',
+              ),
+              ItemKategori(
+                title: 'Lokapala',
+                image: 'assets/images/lokapala.png',
+              ),
+              ItemKategori(
+                title: 'Diablo : Immortal',
+                image: 'assets/images/diablo.png',
+              )
+            ],
+          ),
         ],
       ),
       bottomNavigationBar: Container(
-        decoration: const BoxDecoration(
+        decoration: BoxDecoration(
             border: Border(top: BorderSide(width: 1, color: Colors.grey))),
-        height: 50,
+        height: heightDevice = 70,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
@@ -105,7 +139,7 @@ class Beranda extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Image.asset('assets/icon/home_aktif.png'),
-                const Text(
+                Text(
                   'Beranda',
                   style: TextStyle(color: Color.fromARGB(255, 255, 129, 3)),
                 ),
@@ -115,7 +149,7 @@ class Beranda extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Image.asset('assets/icon/search.png'),
-                const Text(
+                Text(
                   'Cari',
                   style: TextStyle(color: Colors.white),
                 ),
@@ -125,7 +159,7 @@ class Beranda extends StatelessWidget {
               onTap: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(builder: (context) {
-                    return const Bantuan();
+                    return Bantuan();
                   }),
                 );
               },
@@ -133,7 +167,7 @@ class Beranda extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Image.asset('assets/icon/bantuan.png'),
-                  const Text(
+                  Text(
                     'Bantuan',
                     style: TextStyle(color: Colors.white),
                   ),
@@ -144,7 +178,7 @@ class Beranda extends StatelessWidget {
               onTap: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(builder: (context) {
-                    return const AwalScreen();
+                    return AwalScreen();
                   }),
                 );
               },
@@ -152,7 +186,7 @@ class Beranda extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Image.asset('assets/icon/akun.png'),
-                  const Text(
+                  Text(
                     'Akun',
                     style: TextStyle(color: Colors.white),
                   ),
