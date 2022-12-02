@@ -1,18 +1,13 @@
-import 'package:itemmu/ui/bantuan_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:itemmu/ui/profil_awal_screen.dart';
+import '../widget/menu_footer.dart';
+import '../widget/daftar_game.dart';
 
 class BerandaScreen extends StatelessWidget {
   const BerandaScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    double widthDevice = MediaQuery.of(context).size.width;
-    double heightDevice = MediaQuery.of(context).size.height;
-    double paddingTop = MediaQuery.of(context).padding.top;
-    double paddingBottom = MediaQuery.of(context).padding.bottom;
-    double paddingLeft = MediaQuery.of(context).padding.left;
-    double paddingRight = MediaQuery.of(context).padding.right;
+    var media = MediaQuery.of(context).size;
 
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 36, 36, 36),
@@ -22,17 +17,17 @@ class BerandaScreen extends StatelessWidget {
         shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.vertical(bottom: Radius.circular(30))),
         bottom: PreferredSize(
-            preferredSize: Size.fromHeight(heightDevice = 150),
+            preferredSize: Size.fromHeight(media.height * 0.13),
             child: Container(
               padding: EdgeInsets.only(
-                  left: paddingLeft = 20, bottom: paddingBottom = 100),
+                  left: media.width * 0.02, bottom: media.height * 0.1),
               child: Row(
                 children: [
                   Stack(
                     children: [Image.asset('assets/images/logo.png')],
                   ),
                   Container(
-                    margin: EdgeInsets.only(left: paddingLeft = 20),
+                    margin: EdgeInsets.only(left: media.width * 0.02),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: const [
@@ -55,16 +50,19 @@ class BerandaScreen extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 20),
         children: [
           SizedBox(
-            height: heightDevice = 50,
+            height: media.height * 0.05,
           ),
           const Text(
             'POPULER',
             style: TextStyle(
                 color: Colors.white, fontSize: 22, fontWeight: FontWeight.bold),
           ),
-          SizedBox(height: heightDevice = 20),
+          SizedBox(
+            height: media.height * 0.02
+          ),
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: const [
               ItemKategori(
                 title: 'Mobile Legends',
@@ -81,10 +79,11 @@ class BerandaScreen extends StatelessWidget {
             ],
           ),
           SizedBox(
-            height: heightDevice = 20,
+            height:  media.height * 0.05,
           ),
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: const [
               ItemKategori(
                 title: 'Apex Legends',
@@ -101,16 +100,17 @@ class BerandaScreen extends StatelessWidget {
             ],
           ),
           SizedBox(
-            height: heightDevice = 50,
+            height: media.height * 0.05,
           ),
           const Text(
             'NEW TITLES',
             style: TextStyle(
                 color: Colors.white, fontSize: 22, fontWeight: FontWeight.bold),
           ),
-          SizedBox(height: heightDevice = 20),
+          SizedBox(height: media.height * 0.02),
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: const [
               ItemKategori(
                 title: 'Super Sus',
@@ -126,101 +126,27 @@ class BerandaScreen extends StatelessWidget {
               )
             ],
           ),
+          SizedBox(
+            height: media.height * 0.05,
+          ),
         ],
       ),
+      /**Menu Bottom Navigation **/
       bottomNavigationBar: Container(
         decoration: const BoxDecoration(
             border: Border(top: BorderSide(width: 1, color: Colors.grey))),
-        height: heightDevice = 70,
+        height: media.height * 0.1,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Image.asset('assets/icon/home_aktif.png'),
-                const Text(
-                  'Beranda',
-                  style: TextStyle(color: Color.fromARGB(255, 255, 129, 3)),
-                ),
-              ],
-            ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Image.asset('assets/icon/search.png'),
-                const Text(
-                  'Cari',
-                  style: TextStyle(color: Colors.white),
-                ),
-              ],
-            ),
-            GestureDetector(
-              onTap: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(builder: (context) {
-                    return const BantuanScreen();
-                  }),
-                );
-              },
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Image.asset('assets/icon/bantuan.png'),
-                  const Text(
-                    'Bantuan',
-                    style: TextStyle(color: Colors.white),
-                  ),
-                ],
-              ),
-            ),
-            GestureDetector(
-              onTap: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(builder: (context) {
-                    return const ProfilAwalScreen();
-                  }),
-                );
-              },
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Image.asset('assets/icon/akun.png'),
-                  const Text(
-                    'Akun',
-                    style: TextStyle(color: Colors.white),
-                  ),
-                ],
-              ),
-            ),
+            MenuFooter(gambar: 'assets/icon/home_aktif.png', nama: 'Beranda', warna: const Color.fromARGB(255, 255, 129, 3), tautan: '/beranda'),
+            MenuFooter(gambar: 'assets/icon/search.png', nama: 'Cari', warna: Colors.white, tautan: '/cari'),
+            MenuFooter(gambar: 'assets/icon/bantuan.png', nama: 'Bantuan', warna: Colors.white, tautan: '/bantuan'),
+            MenuFooter(gambar: 'assets/icon/akun.png', nama: 'Beranda', warna: Colors.white, tautan: '/profil_awal'),
           ],
         ),
-      ),
-    );
-  }
-}
-
-// Menu game
-class ItemKategori extends StatelessWidget {
-  const ItemKategori({
-    Key? key,
-    required this.title,
-    required this.image,
-  }) : super(key: key);
-
-  final String title;
-  final String image;
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Image.asset(image),
-        Text(
-          title,
-          style: const TextStyle(color: Colors.white, height: 2),
-        )
-      ],
+      ),      
+      /** END Menu Bottom Navigation **/
     );
   }
 }

@@ -5,6 +5,7 @@ import 'ui/login_screen.dart';
 import 'ui/profil_awal_screen.dart';
 import 'ui/register_screen.dart';
 import 'ui/profil_screen.dart';
+import 'ui/cari_screen.dart';
 
 void main() {
   runApp(const Itemmu());
@@ -24,12 +25,13 @@ class Itemmu extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) =>  const BerandaScreen(),
-        '/Beranda':(context) => const BerandaScreen(),
-        '/Bantuan': (context) => const BantuanScreen(),
+        '/beranda':(context) => const BerandaScreen(),
+        '/bantuan': (context) => const BantuanScreen(),
         '/profil_awal': (context) => const ProfilAwalScreen(),
         '/login': (context) => const LoginScreen(),
         '/register':(context) => const RegisterScreen(),
         '/profil':(context) => const ProfilScreen(),
+        '/cari':(context) => const CariScreen(),
       },
     );
   }

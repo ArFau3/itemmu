@@ -1,9 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:itemmu/ui/beranda_screen.dart';
-import 'package:itemmu/ui/login_screen.dart';
-import 'package:itemmu/ui/register_screen.dart';
-import 'package:itemmu/ui/bantuan_screen.dart';
+import '../widget/menu_footer.dart';
 
 
 class ProfilAwalScreen extends StatelessWidget {
@@ -11,6 +8,7 @@ class ProfilAwalScreen extends StatelessWidget {
 
 @override
 Widget build(BuildContext context) {
+  var media = MediaQuery.of(context).size;
   return Scaffold(
     backgroundColor: const Color.fromARGB(255, 62, 62, 62),
     body: ListView(
@@ -79,7 +77,7 @@ Widget build(BuildContext context) {
                           ),
                         ),
                         onPressed: () {
-                          Navigator.push(context, MaterialPageRoute(builder: (_) => const RegisterScreen()));
+                          Navigator.pushNamed(context, '/register');
                         },
                         child: const Text('Buat Akun'), 
                       ),                   
@@ -177,8 +175,9 @@ Widget build(BuildContext context) {
                           TextDecoration.underline
                         ),
                         recognizer: TapGestureRecognizer()
-                          ..onTap = () { Navigator.push(context, MaterialPageRoute(builder: (_) => const BerandaScreen()));
-                        },
+                          ..onTap = () { 
+                            Navigator.pushNamed(context, '/profil_awal');
+                          },
                       ),
                     ],
                   ),
@@ -216,8 +215,9 @@ Widget build(BuildContext context) {
                             fontWeight: FontWeight.bold,
                           ),
                           recognizer: TapGestureRecognizer()
-                            ..onTap = () { Navigator.push(context, MaterialPageRoute(builder: (_) => const LoginScreen()));
-                          },
+                            ..onTap = () { 
+                              Navigator.pushNamed(context, '/login');
+                            },
                         ),
                       ],
                     ),
@@ -230,86 +230,22 @@ Widget build(BuildContext context) {
         //END Opsi Login
       ],
     ),
-    //Footer
-    bottomNavigationBar: Container(
-      decoration: const BoxDecoration(
-        border: Border(top: BorderSide(width: 1, color: Colors.grey))
-      ),
-      height: 60,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          GestureDetector(
-              onTap: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(builder: (context) {
-                    return const BerandaScreen();
-                  }),
-                );
-              },
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Image.asset('assets/icon/home.png'),
-                const Text(
-                  'Beranda',
-                  style: TextStyle(color: Colors.white,),
-                ),
-              ],
-            ),
-          ),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Image.asset('assets/icon/search.png'),
-              const Text(
-                'Cari',
-                style: TextStyle(color: Colors.white),
-              ),
-            ],
-          ),
-          GestureDetector(
-            onTap: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(builder: (context) {
-                  return const BantuanScreen();
-                }),
-              );
-            },
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Image.asset('assets/icon/bantuan.png'),
-                const Text(
-                  'Bantuan',
-                  style: TextStyle(color: Colors.white),
-                ),
-              ],
-            ),
-          ),
-          GestureDetector(
-            onTap: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(builder: (context) {
-                  return const ProfilAwalScreen();
-                }),
-              );
-            },
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Image.asset('assets/icon/akun_aktif.png'),
-                const Text(
-                  'Akun',
-                  style: TextStyle(color: Color.fromARGB(255, 255, 129, 3)),
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
-    ),
-    //END Footer
+    /**Menu Bottom Navigation **/
+      bottomNavigationBar: Container(
+        decoration: const BoxDecoration(
+            border: Border(top: BorderSide(width: 1, color: Colors.grey))),
+        height: media.height * 0.1,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            MenuFooter(gambar: 'assets/icon/home.png', nama: 'Beranda', warna: Colors.white, tautan: '/beranda'),
+            MenuFooter(gambar: 'assets/icon/search.png', nama: 'Cari', warna: Colors.white, tautan: '/cari'),
+            MenuFooter(gambar: 'assets/icon/bantuan.png', nama: 'Bantuan', warna: Colors.white, tautan: '/bantuan'),
+            MenuFooter(gambar: 'assets/icon/akun_aktif.png', nama: 'Beranda', warna: const Color.fromARGB(255, 255, 129, 3), tautan: '/profil_awal'),
+          ],
+        ),
+      ),      
+      /** END Menu Bottom Navigation **/
   );
 }
 }

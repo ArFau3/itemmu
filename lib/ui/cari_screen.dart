@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import '../widget/daftar_bantuan.dart';
 import '../widget/menu_footer.dart';
 
-class BantuanScreen extends StatelessWidget {
-  const BantuanScreen({super.key});
+class CariScreen extends StatelessWidget {
+  const CariScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +13,7 @@ class BantuanScreen extends StatelessWidget {
       // AppBar
       appBar: AppBar(
         title: const Text(
-          'Bantuan',
+          'Pencarian',
           style: TextStyle(fontWeight: FontWeight.w800, fontSize: 25),
         ),
         backgroundColor: const Color.fromARGB(255, 36, 36, 36),
@@ -25,18 +24,15 @@ class BantuanScreen extends StatelessWidget {
           width: 1,
         )),
       ),
-      body: ListView(
-        padding: EdgeInsets.only(
-            left: media.width * 0.05,
-            top: media.height * 0.015,
-            right: media.width * 0.05),
-        children: [
-          DaftarBantuan(judul: "Pusat Bantuan", isi: 'Temukan semua jawaban dari pertanyaan kamu seputar Itemmu.'),
-          DaftarBantuan( judul: "Komplain", isi: 'Cek komplain yang kamu ajukan ke itemmu disini.'),
-          DaftarBantuan(judul: "Hubungi Itemmu", isi: 'Tim layanan pengguna kami siap membantu mengatasi permasalahan kamu.'),
-        ],
+      body: const Center(
+        child: Text(
+          "Halaman Cari",
+          style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+          ),
+        )
       ),
-
       /**Menu Bottom Navigation **/
       bottomNavigationBar: Container(
         decoration: const BoxDecoration(
@@ -46,8 +42,8 @@ class BantuanScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             MenuFooter(gambar: 'assets/icon/home.png', nama: 'Beranda', warna: Colors.white, tautan: '/beranda'),
-            MenuFooter(gambar: 'assets/icon/search.png', nama: 'Cari', warna: Colors.white, tautan: '/cari'),
-            MenuFooter(gambar: 'assets/icon/bantuan_aktif.png', nama: 'Bantuan', warna: const Color.fromARGB(255, 255, 129, 3), tautan: '/bantuan'),
+            MenuFooter(gambar: 'assets/icon/search_aktif.png', nama: 'Cari', warna: const Color.fromARGB(255, 255, 129, 3), tautan: '/cari'),
+            MenuFooter(gambar: 'assets/icon/bantuan.png', nama: 'Bantuan', warna: Colors.white, tautan: '/bantuan'),
             MenuFooter(gambar: 'assets/icon/akun.png', nama: 'Beranda', warna: Colors.white, tautan: '/profil_awal'),
           ],
         ),
@@ -55,4 +51,5 @@ class BantuanScreen extends StatelessWidget {
       /** END Menu Bottom Navigation **/
     );
   }
-}
+
+} 

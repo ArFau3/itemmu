@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:itemmu/ui/profil_awal_screen.dart';
-import 'package:itemmu/ui/beranda_screen.dart';
-import 'package:itemmu/ui/bantuan_screen.dart';
-import 'package:itemmu/ui/profil_screen.dart';
+import '../widget/menu_footer.dart';
 
 
 class RegisterScreen extends StatefulWidget{
@@ -21,6 +18,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var media = MediaQuery.of(context).size;
+
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 62, 62, 62),
       body: ListView(
@@ -165,7 +164,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         ),
                       ),
                       onPressed: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (_) => const ProfilScreen()));
+                        Navigator.pushNamed(context, '/profil');
                       },
                       child: const Text('Register'), 
                     ),                      
@@ -213,7 +212,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           fit: BoxFit.scaleDown,
                         ),
                         onPressed: () {
-                          Navigator.push(context, MaterialPageRoute(builder: (_) => const ProfilAwalScreen()));
+                          Navigator.pushNamed(context, '/profil_awal');
                         },
                       ),
                       IconButton(
@@ -224,7 +223,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           fit: BoxFit.scaleDown,
                         ),
                         onPressed: () {
-                          Navigator.push(context, MaterialPageRoute(builder: (_) => const ProfilAwalScreen()));
+                          Navigator.pushNamed(context, '/profil_awal');
                         },
                       ),
                     ],
@@ -237,85 +236,22 @@ class _RegisterScreenState extends State<RegisterScreen> {
         ),
       ],
       ),
-      //Footer
+      /**Menu Bottom Navigation **/
       bottomNavigationBar: Container(
         decoration: const BoxDecoration(
             border: Border(top: BorderSide(width: 1, color: Colors.grey))),
-        height: 60,
+        height: media.height * 0.1,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            GestureDetector(
-              onTap: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(builder: (context) {
-                    return const BerandaScreen();
-                  }),
-                );
-              },
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Image.asset('assets/icon/home.png'),
-                  const Text(
-                    'Beranda',
-                    style: TextStyle(color: Colors.white,),
-                  ),
-                ],
-              ),
-            ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Image.asset('assets/icon/search.png'),
-                const Text(
-                  'Cari',
-                  style: TextStyle(color: Colors.white),
-                ),
-              ],
-            ),
-            GestureDetector(
-              onTap: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(builder: (context) {
-                    return const BantuanScreen();
-                  }),
-                );
-              },
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Image.asset('assets/icon/bantuan.png'),
-                  const Text(
-                    'Bantuan',
-                    style: TextStyle(color: Colors.white),
-                  ),
-                ],
-              ),
-            ),
-            GestureDetector(
-              onTap: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(builder: (context) {
-                    return const ProfilAwalScreen();
-                  }),
-                );
-              },
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Image.asset('assets/icon/akun_aktif.png'),
-                  const Text(
-                    'Akun',
-                    style: TextStyle(color: Color.fromARGB(255, 255, 129, 3)),
-                  ),
-                ],
-              ),
-            ),
+            MenuFooter(gambar: 'assets/icon/home.png', nama: 'Beranda', warna: Colors.white, tautan: '/beranda'),
+            MenuFooter(gambar: 'assets/icon/search.png', nama: 'Cari', warna: Colors.white, tautan: '/cari'),
+            MenuFooter(gambar: 'assets/icon/bantuan.png', nama: 'Bantuan', warna: Colors.white, tautan: '/bantuan'),
+            MenuFooter(gambar: 'assets/icon/akun_aktif.png', nama: 'Beranda', warna: const Color.fromARGB(255, 255, 129, 3), tautan: '/profil_awal'),
           ],
         ),
-      ),
-      //END Footer
+      ),      
+      /** END Menu Bottom Navigation **/
     );
   }
 
