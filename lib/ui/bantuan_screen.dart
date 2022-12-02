@@ -1,30 +1,25 @@
-import 'package:itemmu/ui/beranda.dart';
+import 'package:itemmu/ui/beranda_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:itemmu/ui/awal.dart';
+import 'package:itemmu/ui/profil_awal_screen.dart';
 
-class Bantuan extends StatelessWidget {
-  const Bantuan({super.key});
+class BantuanScreen extends StatelessWidget {
+  const BantuanScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    double widthDevice = MediaQuery.of(context).size.width;
-    double heightDevice = MediaQuery.of(context).size.height;
-    double paddingTop = MediaQuery.of(context).padding.top;
-    double paddingBottom = MediaQuery.of(context).padding.bottom;
-    double paddingLeft = MediaQuery.of(context).padding.left;
-    double paddingRight = MediaQuery.of(context).padding.right;
+    var media = MediaQuery.of(context).size;
 
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 36, 36, 36),
+      backgroundColor: const Color.fromARGB(255, 36, 36, 36),
       // AppBar
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'Bantuan',
           style: TextStyle(fontWeight: FontWeight.w800, fontSize: 25),
         ),
-        backgroundColor: Color.fromARGB(255, 36, 36, 36),
-        toolbarHeight: heightDevice = 70,
-        shape: Border(
+        backgroundColor: const Color.fromARGB(255, 36, 36, 36),
+        toolbarHeight: media.height * 0.09,
+        shape: const Border(
             bottom: BorderSide(
           color: Color.fromARGB(255, 121, 121, 121),
           width: 1,
@@ -32,13 +27,19 @@ class Bantuan extends StatelessWidget {
       ),
       body: ListView(
         padding: EdgeInsets.only(
-            left: paddingLeft = 10,
-            top: paddingTop = 20,
-            right: paddingRight = 10),
+            left: media.width * 0.05,
+            top: media.height * 0.015,
+            right: media.width * 0.05),
         children: [
           // Pusat Bantuan
           Container(
-            padding: EdgeInsets.all(12),
+            padding: const EdgeInsets.all(15),
+            decoration: BoxDecoration(
+                borderRadius: const BorderRadius.all(Radius.circular(15)),
+                border: Border.all(
+                  width: 1,
+                  color: const Color.fromARGB(255, 121, 121, 121),
+                )),
             child: Row(
               children: [
                 Expanded(
@@ -46,8 +47,8 @@ class Bantuan extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Container(
-                        padding: EdgeInsets.only(bottom: paddingBottom = 10),
-                        child: Text(
+                        padding: EdgeInsets.only(bottom: media.height * 0.02,),
+                        child: const Text(
                           "Pusat Bantuan",
                           style: TextStyle(
                               fontWeight: FontWeight.w500,
@@ -65,27 +66,25 @@ class Bantuan extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 10),
+                  padding: const EdgeInsets.symmetric(horizontal: 10),
                   child: Image.asset('assets/icon/panah.png'),
                 ),
               ],
             ),
-            width: widthDevice = 20,
-            height: heightDevice = 100,
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(15)),
-                border: Border.all(
-                  width: 1,
-                  color: Color.fromARGB(255, 121, 121, 121),
-                )),
           ),
           SizedBox(
-            height: heightDevice = 20,
+            height: media.height * 0.02,
           ),
 
           // Komplain
           Container(
-            padding: EdgeInsets.all(12),
+            padding: const EdgeInsets.all(15),
+            decoration: BoxDecoration(
+                borderRadius: const BorderRadius.all(Radius.circular(15)),
+                border: Border.all(
+                  width: 1,
+                  color: const Color.fromARGB(255, 121, 121, 121),
+                )),
             child: Row(
               children: [
                 Expanded(
@@ -93,8 +92,8 @@ class Bantuan extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Container(
-                        padding: EdgeInsets.only(bottom: paddingBottom = 10),
-                        child: Text(
+                        padding: EdgeInsets.only(bottom: media.height * 0.02,),
+                        child: const Text(
                           "Komplain",
                           style: TextStyle(
                               fontWeight: FontWeight.w500,
@@ -112,27 +111,25 @@ class Bantuan extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 10),
+                  padding: const EdgeInsets.symmetric(horizontal: 10),
                   child: Image.asset('assets/icon/panah.png'),
                 ),
               ],
             ),
-            width: widthDevice = 20,
-            height: heightDevice = 100,
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(15)),
-                border: Border.all(
-                  width: 1,
-                  color: Color.fromARGB(255, 121, 121, 121),
-                )),
           ),
           SizedBox(
-            height: heightDevice = 20,
+            height: media.height * 0.02,
           ),
 
           // Hubungi Itemmu
           Container(
-            padding: EdgeInsets.all(12),
+            padding: const EdgeInsets.all(15),
+            decoration: BoxDecoration(
+                borderRadius: const BorderRadius.all(Radius.circular(15)),
+                border: Border.all(
+                  width: 1,
+                  color: const Color.fromARGB(255, 121, 121, 121),
+                )),
             child: Row(
               children: [
                 Expanded(
@@ -140,8 +137,8 @@ class Bantuan extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Container(
-                        padding: EdgeInsets.only(bottom: paddingBottom = 10),
-                        child: Text(
+                        padding: EdgeInsets.only(bottom: media.height * 0.02,),
+                        child: const Text(
                           "Hubungi Itemmu",
                           style: TextStyle(
                               fontWeight: FontWeight.w500,
@@ -159,29 +156,21 @@ class Bantuan extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 10),
+                  padding: const EdgeInsets.symmetric(horizontal: 10),
                   child: Image.asset('assets/icon/panah.png'),
                 ),
               ],
             ),
-            width: widthDevice = 20,
-            height: heightDevice = 100,
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(15)),
-                border: Border.all(
-                  width: 1,
-                  color: Color.fromARGB(255, 121, 121, 121),
-                )),
           ),
           SizedBox(
-            height: heightDevice = 20,
+            height: media.height * 0.2,
           ),
         ],
       ),
       bottomNavigationBar: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
             border: Border(top: BorderSide(width: 1, color: Colors.grey))),
-        height: heightDevice = 70,
+        height: media.height * 0.1,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
@@ -189,7 +178,7 @@ class Bantuan extends StatelessWidget {
               onTap: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(builder: (context) {
-                    return Beranda();
+                    return const BerandaScreen();
                   }),
                 );
               },
@@ -197,7 +186,7 @@ class Bantuan extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Image.asset('assets/icon/home.png'),
-                  Text(
+                  const Text(
                     'Beranda',
                     style: TextStyle(
                       color: Colors.white,
@@ -210,7 +199,7 @@ class Bantuan extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Image.asset('assets/icon/search.png'),
-                Text(
+                const Text(
                   'Cari',
                   style: TextStyle(color: Colors.white),
                 ),
@@ -220,7 +209,7 @@ class Bantuan extends StatelessWidget {
               onTap: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(builder: (context) {
-                    return Bantuan();
+                    return const BantuanScreen();
                   }),
                 );
               },
@@ -228,7 +217,7 @@ class Bantuan extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Image.asset('assets/icon/bantuan_aktif.png'),
-                  Text(
+                  const Text(
                     'Bantuan',
                     style: TextStyle(color: Color.fromARGB(255, 255, 129, 3)),
                   ),
@@ -239,7 +228,7 @@ class Bantuan extends StatelessWidget {
               onTap: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(builder: (context) {
-                    return AwalScreen();
+                    return const ProfilAwalScreen();
                   }),
                 );
               },
@@ -247,7 +236,7 @@ class Bantuan extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Image.asset('assets/icon/akun.png'),
-                  Text(
+                  const Text(
                     'Akun',
                     style: TextStyle(color: Colors.white),
                   ),

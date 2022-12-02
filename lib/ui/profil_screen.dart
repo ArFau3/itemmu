@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:itemmu/ui/bantuan.dart';
-import 'package:itemmu/ui/awal.dart';
-import 'package:itemmu/ui/beranda.dart';
+import 'package:itemmu/ui/bantuan_screen.dart';
+import 'package:itemmu/ui/profil_awal_screen.dart';
+import 'package:itemmu/ui/beranda_screen.dart';
 
 class ProfilScreen extends StatelessWidget{
   const ProfilScreen({super.key});
@@ -73,7 +73,7 @@ class ProfilScreen extends StatelessWidget{
             top: media.height*0.42,
             child: Container(
               alignment: Alignment.topCenter,
-              margin: EdgeInsets.symmetric(horizontal: media.width*0.04),
+              margin: EdgeInsets.symmetric(horizontal: media.width*0.02),
               height: 130,
               width: media.width*0.94,
               decoration: BoxDecoration(
@@ -343,7 +343,7 @@ class ProfilScreen extends StatelessWidget{
               onTap: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(builder: (context) {
-                    return const Beranda();
+                    return const BerandaScreen();
                   }),
                 );
               },
@@ -372,7 +372,7 @@ class ProfilScreen extends StatelessWidget{
               onTap: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(builder: (context) {
-                    return const Bantuan();
+                    return const BantuanScreen();
                   }),
                 );
               },
@@ -391,7 +391,7 @@ class ProfilScreen extends StatelessWidget{
               onTap: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(builder: (context) {
-                    return const AwalScreen();
+                    return const ProfilAwalScreen();
                   }),
                 );
               },

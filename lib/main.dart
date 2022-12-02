@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:itemmu/ui/beranda.dart';
+import 'ui/beranda_screen.dart';
+import 'ui/bantuan_screen.dart';
+import 'ui/login_screen.dart';
+import 'ui/profil_awal_screen.dart';
+import 'ui/register_screen.dart';
+import 'ui/profil_screen.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const Itemmu());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class Itemmu extends StatelessWidget {
+  const Itemmu({super.key});
 
   // This widget is the root of your application.
   @override
@@ -16,7 +21,16 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const Beranda(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) =>  const BerandaScreen(),
+        '/Beranda':(context) => const BerandaScreen(),
+        '/Bantuan': (context) => const BantuanScreen(),
+        '/profil_awal': (context) => const ProfilAwalScreen(),
+        '/login': (context) => const LoginScreen(),
+        '/register':(context) => const RegisterScreen(),
+        '/profil':(context) => const ProfilScreen(),
+      },
     );
   }
 }

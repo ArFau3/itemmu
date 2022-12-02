@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:itemmu/ui/awal.dart';
-import 'package:itemmu/ui/beranda.dart';
-import 'package:itemmu/ui/bantuan.dart';
+import 'package:itemmu/ui/profil_awal_screen.dart';
+import 'package:itemmu/ui/beranda_screen.dart';
+import 'package:itemmu/ui/bantuan_screen.dart';
 import 'package:itemmu/ui/profil_screen.dart';
 
 
@@ -213,7 +213,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           fit: BoxFit.scaleDown,
                         ),
                         onPressed: () {
-                          Navigator.push(context, MaterialPageRoute(builder: (_) => const AwalScreen()));
+                          Navigator.push(context, MaterialPageRoute(builder: (_) => const ProfilAwalScreen()));
                         },
                       ),
                       IconButton(
@@ -224,7 +224,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           fit: BoxFit.scaleDown,
                         ),
                         onPressed: () {
-                          Navigator.push(context, MaterialPageRoute(builder: (_) => const AwalScreen()));
+                          Navigator.push(context, MaterialPageRoute(builder: (_) => const ProfilAwalScreen()));
                         },
                       ),
                     ],
@@ -249,7 +249,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
               onTap: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(builder: (context) {
-                    return const Beranda();
+                    return const BerandaScreen();
                   }),
                 );
               },
@@ -278,7 +278,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
               onTap: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(builder: (context) {
-                    return const Bantuan();
+                    return const BantuanScreen();
                   }),
                 );
               },
@@ -297,7 +297,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
               onTap: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(builder: (context) {
-                    return const AwalScreen();
+                    return const ProfilAwalScreen();
                   }),
                 );
               },

@@ -1,9 +1,9 @@
-import 'package:itemmu/ui/bantuan.dart';
+import 'package:itemmu/ui/bantuan_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:itemmu/ui/awal.dart';
+import 'package:itemmu/ui/profil_awal_screen.dart';
 
-class Beranda extends StatelessWidget {
-  const Beranda({super.key});
+class BerandaScreen extends StatelessWidget {
+  const BerandaScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -22,6 +22,7 @@ class Beranda extends StatelessWidget {
         shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.vertical(bottom: Radius.circular(30))),
         bottom: PreferredSize(
+            preferredSize: Size.fromHeight(heightDevice = 150),
             child: Container(
               padding: EdgeInsets.only(
                   left: paddingLeft = 20, bottom: paddingBottom = 100),
@@ -34,7 +35,7 @@ class Beranda extends StatelessWidget {
                     margin: EdgeInsets.only(left: paddingLeft = 20),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
+                      children: const [
                         Text(
                           'ITEMMU',
                           style: TextStyle(
@@ -47,17 +48,16 @@ class Beranda extends StatelessWidget {
                   )
                 ],
               ),
-            ),
-            preferredSize: Size.fromHeight(heightDevice = 150)),
+            )),
       ),
       // body
       body: ListView(
-        padding: EdgeInsets.symmetric(horizontal: 20),
+        padding: const EdgeInsets.symmetric(horizontal: 20),
         children: [
           SizedBox(
             height: heightDevice = 50,
           ),
-          Text(
+          const Text(
             'POPULER',
             style: TextStyle(
                 color: Colors.white, fontSize: 22, fontWeight: FontWeight.bold),
@@ -65,7 +65,7 @@ class Beranda extends StatelessWidget {
           SizedBox(height: heightDevice = 20),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
+            children: const [
               ItemKategori(
                 title: 'Mobile Legends',
                 image: 'assets/images/ml.png',
@@ -85,7 +85,7 @@ class Beranda extends StatelessWidget {
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
+            children: const [
               ItemKategori(
                 title: 'Apex Legends',
                 image: 'assets/images/apex.png',
@@ -103,7 +103,7 @@ class Beranda extends StatelessWidget {
           SizedBox(
             height: heightDevice = 50,
           ),
-          Text(
+          const Text(
             'NEW TITLES',
             style: TextStyle(
                 color: Colors.white, fontSize: 22, fontWeight: FontWeight.bold),
@@ -111,7 +111,7 @@ class Beranda extends StatelessWidget {
           SizedBox(height: heightDevice = 20),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
+            children: const [
               ItemKategori(
                 title: 'Super Sus',
                 image: 'assets/images/supersus.png',
@@ -129,7 +129,7 @@ class Beranda extends StatelessWidget {
         ],
       ),
       bottomNavigationBar: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
             border: Border(top: BorderSide(width: 1, color: Colors.grey))),
         height: heightDevice = 70,
         child: Row(
@@ -139,7 +139,7 @@ class Beranda extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Image.asset('assets/icon/home_aktif.png'),
-                Text(
+                const Text(
                   'Beranda',
                   style: TextStyle(color: Color.fromARGB(255, 255, 129, 3)),
                 ),
@@ -149,7 +149,7 @@ class Beranda extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Image.asset('assets/icon/search.png'),
-                Text(
+                const Text(
                   'Cari',
                   style: TextStyle(color: Colors.white),
                 ),
@@ -159,7 +159,7 @@ class Beranda extends StatelessWidget {
               onTap: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(builder: (context) {
-                    return Bantuan();
+                    return const BantuanScreen();
                   }),
                 );
               },
@@ -167,7 +167,7 @@ class Beranda extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Image.asset('assets/icon/bantuan.png'),
-                  Text(
+                  const Text(
                     'Bantuan',
                     style: TextStyle(color: Colors.white),
                   ),
@@ -178,7 +178,7 @@ class Beranda extends StatelessWidget {
               onTap: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(builder: (context) {
-                    return AwalScreen();
+                    return const ProfilAwalScreen();
                   }),
                 );
               },
@@ -186,7 +186,7 @@ class Beranda extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Image.asset('assets/icon/akun.png'),
-                  Text(
+                  const Text(
                     'Akun',
                     style: TextStyle(color: Colors.white),
                   ),
@@ -202,7 +202,7 @@ class Beranda extends StatelessWidget {
 
 // Menu game
 class ItemKategori extends StatelessWidget {
-  ItemKategori({
+  const ItemKategori({
     Key? key,
     required this.title,
     required this.image,

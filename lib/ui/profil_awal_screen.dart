@@ -1,13 +1,13 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:itemmu/ui/beranda.dart';
+import 'package:itemmu/ui/beranda_screen.dart';
 import 'package:itemmu/ui/login_screen.dart';
 import 'package:itemmu/ui/register_screen.dart';
-import 'package:itemmu/ui/bantuan.dart';
+import 'package:itemmu/ui/bantuan_screen.dart';
 
 
-class AwalScreen extends StatelessWidget {
-  const AwalScreen({super.key});
+class ProfilAwalScreen extends StatelessWidget {
+  const ProfilAwalScreen({super.key});
 
 @override
 Widget build(BuildContext context) {
@@ -127,7 +127,7 @@ Widget build(BuildContext context) {
                           fit: BoxFit.scaleDown,
                         ),
                         onPressed: () {
-                          Navigator.push(context, MaterialPageRoute(builder: (_) => const AwalScreen()));
+                          Navigator.push(context, MaterialPageRoute(builder: (_) => const ProfilAwalScreen()));
                         },
                       ),
                       IconButton(
@@ -138,7 +138,7 @@ Widget build(BuildContext context) {
                           fit: BoxFit.scaleDown,
                         ),
                         onPressed: () {
-                          Navigator.push(context, MaterialPageRoute(builder: (_) => const AwalScreen()));
+                          Navigator.push(context, MaterialPageRoute(builder: (_) => const ProfilAwalScreen()));
                         },
                       ),
                     ],
@@ -177,7 +177,7 @@ Widget build(BuildContext context) {
                           TextDecoration.underline
                         ),
                         recognizer: TapGestureRecognizer()
-                          ..onTap = () { Navigator.push(context, MaterialPageRoute(builder: (_) => const Beranda()));
+                          ..onTap = () { Navigator.push(context, MaterialPageRoute(builder: (_) => const BerandaScreen()));
                         },
                       ),
                     ],
@@ -243,7 +243,7 @@ Widget build(BuildContext context) {
               onTap: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(builder: (context) {
-                    return const Beranda();
+                    return const BerandaScreen();
                   }),
                 );
               },
@@ -272,7 +272,7 @@ Widget build(BuildContext context) {
             onTap: () {
               Navigator.of(context).push(
                 MaterialPageRoute(builder: (context) {
-                  return const Bantuan();
+                  return const BantuanScreen();
                 }),
               );
             },
@@ -291,7 +291,7 @@ Widget build(BuildContext context) {
             onTap: () {
               Navigator.of(context).push(
                 MaterialPageRoute(builder: (context) {
-                  return const AwalScreen();
+                  return const ProfilAwalScreen();
                 }),
               );
             },
